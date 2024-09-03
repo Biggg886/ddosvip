@@ -435,4 +435,52 @@ def main():
 		else:
 			print ("[\033[91mSIN\033[00m] {} Not a command".format(sinput))
 			main()
+			try:
+	users = ["root", "guests", "me"]
+	clear = "clear"
+	os.system (clear)
+	username = getpass.getpass ("[+] Username: ")
+	if username in users:
+		user = username
+	else:
+		print ("[+] Incorrect, exiting")
+		exit()
+except KeyboardInterrupt:
+	print ("\nCTRL-C Pressed")
+	exit()
+try:
+	passwords = ["root", "gayman", "me"]
+	password = getpass.getpass ("[+] Password: ")
+	if user == "root":
+		if password == passwords[0]:
+			print ("[+] Login correct")
+			cookie.write("DIE")
+			time.sleep(2)
+			os.system (clear)
+			try:
+				os.system ("clear")
+				print (banner)
+				main()
+			except KeyboardInterrupt:
+				print ("\n[\033[91mSIN\033[00m] CTRL has been pressed")
+				main()
+		else:
+			print ("[+] Incorrect, exiting")
+			exit()
+	if user == "guests":
+		if password == passwords[1]:
+			print ("[+] Login correct")
+			print ("[+] Certain methods will not be available to you")
+			time.sleep(4)
+			os.system (clear)
+			try:
+				os.system ("clear")
+				print (banner)
+				main()
+			except KeyboardInterrupt:
+				print ("\n[\033[91mSIN\033[00m] CTRL has been pressed")
+				main()
+		else:
+			print ("[+] Incorrect, exiting")
+			exit()
 	exit()
