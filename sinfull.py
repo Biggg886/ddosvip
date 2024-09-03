@@ -435,6 +435,4 @@ def main():
 		else:
 			print ("[\033[91mSIN\033[00m] {} Not a command".format(sinput))
 			main()
-
-except KeyboardInterrupt:
 	exit()
